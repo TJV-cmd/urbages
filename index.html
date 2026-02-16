@@ -4,62 +4,56 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>URBAGES | Leads para inmobiliarias</title>
-  <meta name="description" content="Mejoramos tus anuncios y lanzamos campañas en Meta para atraer compradores y propietarios." />
+  <meta name="description" content="URBAGES: optimizamos tus anuncios y lanzamos campañas en Meta para captar leads de compradores y propietarios en tu zona." />
+
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --line:#e5e7eb;
-      --card:#ffffff;
-      --accent:#2563eb;
-      --accent2:#16a34a;
-      --radius:16px;
-      --shadow: 0 10px 30px rgba(2,6,23,.06);
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --muted2:#64748b;
+      --line: #e5e7eb;
+      --shadow: 0 18px 45px rgba(2,6,23,.08);
+      --shadow2: 0 10px 25px rgba(2,6,23,.06);
+      --r: 18px;
+      --r2: 14px;
+      --blue: #2563eb;
+      --blue2:#1d4ed8;
+      --green:#16a34a;
+      --green2:#15803d;
+      --max: 1120px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: var(--bg);
       color: var(--text);
-      line-height: 1.45;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(37,99,235,.12), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, rgba(22,163,74,.08), transparent 55%),
+        var(--bg);
+      line-height:1.5;
     }
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:22px}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.75);
+      border-bottom:1px solid rgba(229,231,235,.65);
+    }
     .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:10px 0 18px;border-bottom:1px solid var(--line);
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 22px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
     .logo{
-      width:34px;height:34px;border-radius:10px;
+      width:34px; height:34px; border-radius:10px;
       background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(22,163,74,.75));
-      box-shadow: 0 8px 18px rgba(2,6,23,.10);
-    }
-    .navlinks{display:flex;gap:14px;flex-wrap:wrap}
-    .navlinks a{color:var(--muted);font-weight:700}
-    .navlinks a:hover{color:var(--text)}
-    .hero{
-      padding:26px 0 10px;
-      display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center;
-    }
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
-    .pill{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:7px 10px;border:1px solid var(--line);border-radius:999px;
-      color:var(--muted);background:#f8fafc;width:max-content;
-      font-weight:700;font-size:13px;
-    }
-    h1{
-      margin:12px 0 10px;
-      font-size: clamp(30px, 4.2vw, 46px);
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
-    .sub{color:var(--muted);font-size:16px;max-width:58ch;margin:0}
-    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:11px 14px;border-radius:12px;border:1px solid var(--line);
-      background:#fff;font-weight:8
