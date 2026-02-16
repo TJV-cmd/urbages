@@ -6,167 +6,60 @@
   <title>URBAGES | Leads para inmobiliarias</title>
   <meta name="description" content="Mejoramos tus anuncios y lanzamos campañas en Meta para atraer compradores y propietarios." />
   <style>
-    :root{--bg:#0b1220;--text:#eaf0ff;--muted:#b8c3e6;--line:rgba(255,255,255,.12);--blue:#3b82f6;--green:#22c55e;--r:18px}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.45}
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --accent2:#16a34a;
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(2,6,23,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.3px}
-    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,rgba(59,130,246,.95),rgba(34,197,94,.75))}
-    .nav a{color:var(--muted);font-weight:700;margin-left:14px}
-    .nav a:hover{color:var(--text)}
-    .hero{padding:24px 0;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center}
+    .wrap{max-width:1080px;margin:0 auto;padding:22px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:10px 0 18px;border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px}
+    .logo{
+      width:34px;height:34px;border-radius:10px;
+      background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(22,163,74,.75));
+      box-shadow: 0 8px 18px rgba(2,6,23,.10);
+    }
+    .navlinks{display:flex;gap:14px;flex-wrap:wrap}
+    .navlinks a{color:var(--muted);font-weight:700}
+    .navlinks a:hover{color:var(--text)}
+    .hero{
+      padding:26px 0 10px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center;
+    }
     @media(max-width:900px){.hero{grid-template-columns:1fr}}
-    .card{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:var(--r);padding:18px}
-    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04);width:max-content}
-    h1{margin:14px 0 10px;font-size:clamp(32px,4.2vw,52px);line-height:1.05}
-    .sub{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:52ch}
-    .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:800}
-    .btn:hover{background:rgba(255,255,255,.07)}
-    .btn.blue{background:linear-gradient(135deg,rgba(59,130,246,.95),rgba(59,130,246,.65));border-color:rgba(59,130,246,.55)}
-    .btn.green{background:linear-gradient(135deg,rgba(34,197,94,.95),rgba(34,197,94,.55));border-color:rgba(34,197,94,.55)}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    @media(max-width:900px){.grid3{grid-template-columns:1fr}}
-    .muted{color:var(--muted)}
-    .section{padding:18px 0}
-    .ab{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media(max-width:900px){.ab{grid-template-columns:1fr}}
-    img{width:100%;height:260px;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#0a1020}
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media(max-width:900px){.pricing{grid-template-columns:1fr}}
-    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-    li{margin:7px 0}
-    .footer{border-top:1px solid var(--line);padding:20px 0;margin-top:18px;color:rgba(234,240,255,.75);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header class="nav">
-      <div class="brand"><div class="logo"></div>URBAGES</div>
-      <div>
-        <a href="#como">Cómo funciona</a>
-        <a href="#packs">Packs</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </header>
-
-    <section class="hero">
-      <div>
-        <div class="badge">🚀 Meta Ads + anuncios mejorados · Para inmobiliarias de 1–5 empleados</div>
-        <h1>Más leads para tu inmobiliaria, sin complicarte.</h1>
-        <p class="sub">Mejoramos fotos y anuncio, y lanzamos campañas en Facebook/Instagram para atraer compradores y propietarios en tu zona. Tú sólo atiendes los contactos.</p>
-
-        <div class="row">
-          <a class="btn green" id="waTop" href="#">💬 Hablar por WhatsApp</a>
-          <a class="btn blue" href="#packs">Ver packs</a>
-        </div>
-
-        <div class="grid3" id="como">
-          <div class="card"><b>1) Optimización</b><div class="muted">Mejoramos foto + texto para que el anuncio destaque.</div></div>
-          <div class="card"><b>2) Campaña en Meta</b><div class="muted">Anuncios en Facebook/Instagram con foco local.</div></div>
-          <div class="card"><b>3) Leads</b><div class="muted">Te llegan contactos listos para que los llames.</div></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3 style="margin:0 0 8px">Qué consigues</h3>
-        <p class="muted" style="margin:0">Más llamadas y mensajes, mejor presentación de tus propiedades y un sistema simple para captar interesados sin perder tiempo.</p>
-        <p class="muted" style="margin-top:10px;font-size:12px">*Resultados variables según zona, precio y estado del anuncio.</p>
-      </div>
-    </section>
-
-    <section class="section" id="antesdespues">
-      <h2 style="margin:0 0 8px">Antes y después</h2>
-      <p class="muted" style="margin:0 0 12px">Sube tus imágenes luego como <b>antes.jpg</b> y <b>despues.jpg</b> en la raíz del repo.</p>
-      <div class="ab">
-        <div class="card">
-          <img src="antes.jpg" alt="Antes" />
-          <div class="muted" style="margin-top:8px">Antes</div>
-        </div>
-        <div class="card">
-          <img src="despues.jpg" alt="Después" />
-          <div class="muted" style="margin-top:8px">Después</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="packs">
-      <h2 style="margin:0 0 8px">Elige tu pack</h2>
-      <p class="muted" style="margin:0 0 12px">Empieza sin riesgo y escala cuando veas resultados.</p>
-
-      <div class="pricing">
-        <div class="card">
-          <h3 style="margin:0">Impulso</h3>
-          <div style="font-weight:900;font-size:28px;margin:8px 0">0€</div>
-          <div class="muted">Prueba para 1 propiedad</div>
-          <ul>
-            <li>Mejora de 1 foto</li>
-            <li>Texto del anuncio optimizado</li>
-            <li>Recomendación rápida de publicación</li>
-          </ul>
-          <div class="row"><a class="btn green" id="waImpulso" href="#">Pedir gratis</a></div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0">Starter</h3>
-          <div style="font-weight:900;font-size:28px;margin:8px 0">95€/mes</div>
-          <div class="muted">Para captar leads cada mes</div>
-          <ul>
-            <li>Optimización mensual (X propiedades)</li>
-            <li>1 campaña Meta activa</li>
-            <li>Reporte simple semanal</li>
-          </ul>
-          <div class="row"><a class="btn blue" id="waStarter" href="#">Empezar</a></div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0">Pro</h3>
-          <div style="font-weight:900;font-size:28px;margin:8px 0">95€/mes</div>
-          <div class="muted">+ 10€/lead (solo pagas por contacto)</div>
-          <ul>
-            <li>Todo lo de Starter</li>
-            <li>Optimización semanal</li>
-            <li>Escalado de campañas</li>
-          </ul>
-          <div class="row"><a class="btn" id="waPro" href="#">Quiero Pro</a></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <h2 style="margin:0 0 8px">Contacto</h2>
-      <p class="muted" style="margin:0 0 12px">Escríbenos por WhatsApp y arrancamos.</p>
-      <div class="card" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
-        <div>
-          <b>¿Empezamos esta semana?</b>
-          <div class="muted">Te respondemos con el siguiente paso.</div>
-        </div>
-        <div class="row" style="margin:0">
-          <a class="btn green" id="waBottom" href="#">💬 WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div>URBAGES © <span id="y"></span></div>
-      <div>Política de privacidad · Aviso legal</div>
-    </footer>
-  </div>
-
-  <script>
-    const WHATSAPP_NUMBER = "34689728714";
-    const msgBase = "Hola URBAGES, quiero info. Mi inmobiliaria es ____ y estoy en _____. Me interesa: (Impulso/Starter/Pro). Enlace del anuncio: ____";
-
-    const wa = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-
-    document.getElementById("waTop").href = wa(msgBase);
-    document.getElementById("waBottom").href = wa(msgBase);
-    document.getElementById("waImpulso").href = wa("Hola URBAGES, quiero la prueba gratis (Pack Impulso). Mi inmobiliaria es ____ y estoy en ____. Enlace del anuncio: ____");
-    document.getElementById("waStarter").href = wa("Hola URBAGES, quiero empezar con el Pack Starter (95€/mes). Mi inmobiliaria es ____ y estoy en ____. Objetivo: compradores/propietarios. Zona: ____");
-    document.getElementById("waPro").href = wa("Hola URBAGES, me interesa el Pack Pro (95€/mes + 10€/lead). Mi inmobiliaria es ____ y estoy en ____. Leads de: compradores/propietarios. Zona: ____");
-
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    .pill{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:7px 10px;border:1px solid var(--line);border-radius:999px;
+      color:var(--muted);background:#f8fafc;width:max-content;
+      font-weight:700;font-size:13px;
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size: clamp(30px, 4.2vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .sub{color:var(--muted);font-size:16px;max-width:58ch;margin:0}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:11px 14px;border-radius:12px;border:1px solid var(--line);
+      background:#fff;font-weight:8
