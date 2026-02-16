@@ -4,34 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>URBAGES | Leads para inmobiliarias</title>
-  <meta name="description" content="URBAGES: optimizamos tus anuncios y lanzamos campañas en Meta para captar leads de compradores y propietarios en tu zona." />
-
+  <meta name="description" content="URBAGES: optimizamos tu anuncio y lanzamos campañas en Meta para captar leads de compradores y propietarios en tu zona." />
   <style>
     :root{
-      --bg: #ffffff;
-      --surface: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
+      --bg:#ffffff;
+      --surface:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
       --muted2:#64748b;
-      --line: #e5e7eb;
-      --shadow: 0 18px 45px rgba(2,6,23,.08);
-      --shadow2: 0 10px 25px rgba(2,6,23,.06);
-      --r: 18px;
-      --r2: 14px;
-      --blue: #2563eb;
+      --line:#e5e7eb;
+      --shadow:0 18px 45px rgba(2,6,23,.08);
+      --shadow2:0 10px 25px rgba(2,6,23,.06);
+      --r:18px;
+      --blue:#2563eb;
       --blue2:#1d4ed8;
       --green:#16a34a;
       --green2:#15803d;
-      --max: 1120px;
+      --max:1120px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text);
+      color:var(--text);
       background:
         radial-gradient(1200px 600px at 50% -10%, rgba(37,99,235,.12), transparent 60%),
         radial-gradient(900px 500px at 10% 10%, rgba(22,163,74,.08), transparent 55%),
@@ -39,12 +36,10 @@
       line-height:1.5;
     }
     a{color:inherit;text-decoration:none}
-
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
     .topbar{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.75);
+      background: rgba(255,255,255,.78);
       border-bottom:1px solid rgba(229,231,235,.65);
     }
     .nav{
@@ -53,7 +48,516 @@
       padding:14px 22px;
       display:flex; align-items:center; justify-content:space-between; gap:14px;
     }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:950; letter-spacing:.2px}
     .logo{
       width:34px; height:34px; border-radius:10px;
       background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(22,163,74,.75));
+      box-shadow: 0 10px 18px rgba(2,6,23,.12);
+    }
+    .navlinks{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .navlinks a{
+      color:var(--muted);
+      font-weight:850;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .navlinks a:hover{background:rgba(2,6,23,.04); color:var(--text)}
+    .navcta{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+
+    .btn{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:12px;
+      font-weight:950;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: var(--shadow2);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      font-size:14px;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(37,99,235,1), rgba(29,78,216,1));
+      border-color: rgba(37,99,235,.35);
+      color:#fff;
+    }
+    .btn.green{
+      background: linear-gradient(180deg, rgba(22,163,74,1), rgba(21,128,61,1));
+      border-color: rgba(22,163,74,.35);
+      color:#fff;
+    }
+    .btn.ghost{background: rgba(255,255,255,.86)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+
+    .hero{
+      padding:34px 0 18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media(max-width:980px){.hero{grid-template-columns:1fr}}
+
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(229,231,235,.85);
+      background: rgba(248,250,252,.9);
+      color: var(--muted);
+      font-weight:850;
+      font-size:13px;
+    }
+
+    .h1{
+      margin:14px 0 10px;
+      font-size: clamp(34px, 4.4vw, 56px);
+      line-height:1.03;
+      letter-spacing:-.9px;
+    }
+    .sub{
+      margin:0;
+      max-width: 66ch;
+      color: var(--muted);
+      font-size: 16.5px;
+    }
+    .herocta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(229,231,235,.9);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+    .heroCard{padding:18px}
+    .heroCard h3{margin:0 0 8px; letter-spacing:-.2px}
+    .heroCard p{margin:0; color:var(--muted)}
+    .small{font-size:12.5px; color:var(--muted2)}
+
+    .stats{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:10px;
+    }
+    @media(max-width:520px){.stats{grid-template-columns:1fr}}
+    .stat{
+      border:1px solid rgba(229,231,235,.9);
+      border-radius: 14px;
+      background: rgba(248,250,252,.85);
+      padding:12px;
+    }
+    .stat b{display:block; font-size:14px}
+    .stat span{color:var(--muted2); font-size:12.5px}
+
+    .section{padding:22px 0}
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:12px; flex-wrap:wrap; margin-bottom:12px;
+    }
+    h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:-.3px;
+    }
+    .lead{margin:0; color:var(--muted); max-width:78ch}
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:12px;
+    }
+    @media(max-width:980px){.grid3{grid-template-columns:1fr}}
+
+    .step{
+      padding:16px;
+      border-radius: var(--r);
+      border:1px solid rgba(229,231,235,.9);
+      background: linear-gradient(180deg, rgba(248,250,252,.95), rgba(255,255,255,1));
+      box-shadow: var(--shadow2);
+    }
+    .num{
+      width:34px;height:34px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:1000;color:#fff;
+      background: linear-gradient(180deg, rgba(37,99,235,1), rgba(29,78,216,1));
+      box-shadow: 0 12px 22px rgba(37,99,235,.22);
+      margin-bottom:10px;
+    }
+    .step b{display:block; margin-bottom:6px}
+    .step p{margin:0; color:var(--muted)}
+
+    .ab{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    @media(max-width:980px){.ab{grid-template-columns:1fr}}
+    .shot{padding:14px}
+    .shot img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid rgba(229,231,235,.9);
+      background:#f1f5f9;
+    }
+    .label{
+      display:flex; justify-content:space-between; gap:10px; align-items:center;
+      margin-top:10px;
+    }
+    .badge{
+      font-size:12px;
+      font-weight:1000;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(229,231,235,.95);
+      background: rgba(248,250,252,.95);
+      color: var(--muted);
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:12px;
+      align-items:stretch;
+    }
+    @media(max-width:980px){.pricing{grid-template-columns:1fr}}
+    .priceCard{padding:18px}
+    .priceTop{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .plan{font-weight:1000; letter-spacing:-.2px}
+    .price{
+      font-size: 30px;
+      font-weight: 1100;
+      letter-spacing:-.6px;
+      margin:10px 0 4px;
+    }
+    .per{color:var(--muted2); font-weight:850; font-size:13px}
+    .bullets{margin:12px 0 0; padding-left:18px; color:var(--muted)}
+    .bullets li{margin:7px 0}
+
+    .highlight{
+      border: 1px solid rgba(37,99,235,.28);
+      box-shadow: 0 22px 55px rgba(37,99,235,.12);
+      background: linear-gradient(180deg, rgba(239,246,255,.75), rgba(255,255,255,1));
+    }
+    .ribbon{
+      font-size:12px;
+      font-weight:1100;
+      color:#fff;
+      background: linear-gradient(180deg, rgba(37,99,235,1), rgba(29,78,216,1));
+      border-radius:999px;
+      padding:7px 11px;
+      box-shadow: 0 16px 30px rgba(37,99,235,.18);
+    }
+
+    .faq{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media(max-width:980px){.faq{grid-template-columns:1fr}}
+    details{
+      border:1px solid rgba(229,231,235,.9);
+      border-radius: var(--r);
+      background:#fff;
+      box-shadow: var(--shadow2);
+      padding:14px 16px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:1000;
+      color:var(--text);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted)}
+
+    .ctaBand{
+      border:1px solid rgba(229,231,235,.9);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(248,250,252,.95), rgba(255,255,255,1));
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer{
+      margin-top:18px;
+      padding:18px 0 26px;
+      border-top:1px solid rgba(229,231,235,.9);
+      color: var(--muted2);
+      font-size: 13px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+
+    /* little helpers */
+    .sp8{height:8px}
+    .sp12{height:12px}
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div>URBAGES</div>
+
+      <div class="navlinks">
+        <a href="#como">Cómo funciona</a>
+        <a href="#antesdespues">Antes/Después</a>
+        <a href="#packs">Packs</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="navcta">
+        <a class="btn ghost" href="#packs">Ver packs</a>
+        <a class="btn green" id="waNav" href="#">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="pillrow">
+          <span class="pill">🚀 Meta Ads + anuncios mejorados</span>
+          <span class="pill">📍 Enfocado en tu zona</span>
+          <span class="pill">👥 Para agencias 1–5</span>
+        </div>
+
+        <h1 class="h1">Leads para tu inmobiliaria.<br/>Sin complicarte.</h1>
+
+        <p class="sub">
+          Optimizamos tu anuncio (foto + texto) y lanzamos campañas en Facebook/Instagram para captar
+          <b>compradores y propietarios</b>. Tú sólo atiendes los contactos.
+        </p>
+
+        <div class="herocta">
+          <a class="btn green" id="waHero" href="#">💬 Hablar por WhatsApp</a>
+          <a class="btn primary" href="#packs">Ver packs</a>
+          <a class="btn" href="#como">Cómo funciona</a>
+        </div>
+
+        <div class="section" style="padding-top:18px">
+          <div class="grid3">
+            <div class="step">
+              <div class="num">1</div>
+              <b>Optimización del anuncio</b>
+              <p>Mejoras rápidas para que la propiedad destaque y genere interés.</p>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <b>Campaña en Meta</b>
+              <p>Segmentación local y mensajes directos para captar contactos.</p>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <b>Recibes leads listos</b>
+              <p>Te llegan interesados para llamar y cerrar visitas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card heroCard">
+        <h3>Lo que vas a notar</h3>
+        <p>Más respuestas y mejor calidad de contacto, con un sistema simple y repetible cada mes.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <b>Implementación rápida</b>
+            <span>Sin herramientas raras</span>
+          </div>
+          <div class="stat">
+            <b>Optimización continua</b>
+            <span>Mejoras constantes</span>
+          </div>
+          <div class="stat">
+            <b>Enfoque local</b>
+            <span>Zona y objetivo</span>
+          </div>
+        </div>
+
+        <div class="sp12"></div>
+        <span class="small">*Resultados variables según zona, precio y estado del anuncio.</span>
+      </div>
+    </section>
+
+    <section class="section" id="como">
+      <div class="sectionHead">
+        <h2>Cómo funciona</h2>
+        <p class="lead">Un proceso simple: optimizar → anunciar → recibir leads.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card" style="padding:16px">
+          <b>Optimización</b>
+          <div class="sp8"></div>
+          <div class="lead">Mejora de foto + texto del anuncio para aumentar el interés.</div>
+        </div>
+        <div class="card" style="padding:16px">
+          <b>Campañas Meta</b>
+          <div class="sp8"></div>
+          <div class="lead">Facebook/Instagram con foco en tu zona y objetivo.</div>
+        </div>
+        <div class="card" style="padding:16px">
+          <b>Leads</b>
+          <div class="sp8"></div>
+          <div class="lead">Contactos que llegan por mensaje o llamada para atender.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="antesdespues">
+      <div class="sectionHead">
+        <h2>Antes y después</h2>
+        <p class="lead">Sube tus imágenes como <b>antes.jpg</b> y <b>despues.jpg</b> en la raíz del repo.</p>
+      </div>
+
+      <div class="ab">
+        <div class="card shot">
+          <img src="antes.jpg" alt="Antes" />
+          <div class="label">
+            <span class="badge">Antes</span>
+            <span class="small">Foto sin optimizar</span>
+          </div>
+        </div>
+        <div class="card shot">
+          <img src="despues.jpg" alt="Después" />
+          <div class="label">
+            <span class="badge">Después</span>
+            <span class="small">Mejoras de presentación</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packs">
+      <div class="sectionHead">
+        <h2>Packs</h2>
+        <p class="lead">Empieza sin riesgo y escala cuando veas resultados.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="card priceCard">
+          <div class="priceTop">
+            <div class="plan">Impulso</div>
+            <span class="badge">Entrada</span>
+          </div>
+          <div class="price">Gratis</div>
+          <div class="per">1 propiedad</div>
+          <ul class="bullets">
+            <li>Mejora de 1 foto</li>
+            <li>Texto del anuncio optimizado</li>
+            <li>Recomendación rápida de publicación</li>
+          </ul>
+          <div class="sp12"></div>
+          <a class="btn green" id="waImpulso" href="#">Pedir gratis</a>
+        </div>
+
+        <div class="card priceCard highlight">
+          <div class="priceTop">
+            <div class="plan">Starter</div>
+            <span class="ribbon">Más vendido</span>
+          </div>
+          <div class="price">49€</div>
+          <div class="per">al mes · 1 propiedad</div>
+          <ul class="bullets">
+            <li>Optimización mensual (1 propiedad)</li>
+            <li>1 campaña Meta activa</li>
+            <li>Reporte simple semanal</li>
+          </ul>
+          <div class="sp12"></div>
+          <a class="btn primary" id="waStarter" href="#">Empezar</a>
+        </div>
+
+        <div class="card priceCard">
+          <div class="priceTop">
+            <div class="plan">Pro</div>
+            <span class="badge">Escala</span>
+          </div>
+          <div class="price">89€</div>
+          <div class="per">al mes · 1 propiedad</div>
+          <ul class="bullets">
+            <li>Todo lo de Starter</li>
+            <li>1 propiedad activa</li>
+            <li>Optimización semanal</li>
+            <li>Escalado de campañas</li>
+          </ul>
+          <div class="sp12"></div>
+          <a class="btn" id="waPro" href="#">Quiero Pro</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="sectionHead">
+        <h2>Preguntas frecuentes</h2>
+        <p class="lead">Respuestas rápidas para empezar sin fricción.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>¿Qué necesito para empezar?</summary>
+          <p>Un enlace al anuncio (o fotos y datos de la propiedad) y la zona objetivo. Te decimos el siguiente paso por WhatsApp.</p>
+        </details>
+        <details>
+          <summary>¿El presupuesto de Meta está incluido?</summary>
+          <p>El gasto de anuncios en Facebook/Instagram suele ir aparte. Te recomendaremos un rango según zona y objetivo.</p>
+        </details>
+        <details>
+          <summary>¿Puedo captar propietarios en vez de compradores?</summary>
+          <p>Sí. Ajustamos el mensaje y el objetivo para captar propietarios (captación) o compradores (venta).</p>
+        </details>
+        <details>
+          <summary>¿Se garantizan leads?</summary>
+          <p>No se puede garantizar un número fijo. Influyen zona, precio y calidad del anuncio. Optimizamos para maximizar resultados.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ctaBand">
+        <div>
+          <b style="font-size:16px">¿Listo para empezar esta semana?</b>
+          <div class="lead">Te respondemos con el plan y el siguiente paso.</div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn green" id="waBottom" href="#">💬 WhatsApp</a>
+          <a class="btn ghost" href="#packs">Ver packs</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>URBAGES © <span id="y"></span></div>
+      <div>Política de privacidad · Aviso legal</div>
+    </footer>
+  </div>
+
+  <script>
+    const WHATSAPP_NUMBER = "34689728714";
+    const wa = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+    const msgBase = "Hola URBAGES, quiero info. Mi inmobiliaria es ____ y estoy en _____. Me interesa: (Impulso/Starter/Pro). Enlace del anuncio: ____";
+    document.getElementById("waNav").href = wa(msgBase);
+    document.getElementById("waHero").href = wa(msgBase);
+    document.getElementById("waBottom").href = wa(msgBase);
+
+    document.getElementById("waImpulso").href = wa("Hola URBAGES, quiero la prueba gratis (Pack Impulso). Mi inmobiliaria es ____ y estoy en ____. Enlace del anuncio: ____");
+    document.getElementById("waStarter").href = wa("Hola URBAGES, quiero empezar con el Pack Starter (49€/mes, 1 propiedad). Mi inmobiliaria es ____ y estoy en ____. Objetivo: compradores/propietarios. Zona: ____. Enlace del anuncio: ____");
+    document.getElementById("waPro").href = wa("Hola URBAGES, me interesa el Pack Pro (89€/mes, 1 propiedad). Mi inmobiliaria es ____ y estoy en ____. Leads de: compradores/propietarios. Zona: ____. Enlace del anuncio: ____");
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
